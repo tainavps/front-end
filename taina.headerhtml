@@ -1,0 +1,47 @@
+<html>
+
+
+<style>
+
+header{
+
+  display: flex;
+
+}
+
+.logo{ bts
+
+   width: 100px;
+
+}
+
+</style>
+
+<header>
+
+  
+    <img src="" "logo">
+    <button>Inicio</button>
+    <button>Configuração<button>
+    <button>Perfil</button>
+    <button>Historico</button>
+
+</header>
+
+   <div class="produtos">
+      <p>Produto 1</p>
+      <P>Produto 2</p>
+      <P>Produto 3</p>
+   </div>
+
+<footer>
+
+<center>
+<h3>Sobre nós</h3>
+</br>
+<P>nós somos uma empressa de compartilhamento de conteúdo</p>
+</center>
+
+</footer>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <img id="imagemJogador" src="" alt="Imagem do Jogador">
+  <p id="nomeJogador">Jogador</p>
+  <p id="idadeJogador">Jogador</p>
+
+  <script>
+    // URL para a requisição GET
+    const url = 'https://api.npoint.io/d260affa584617e12e07';
+
+    // Função para tratar a resposta da requisição
+    function handleResponse(response) {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    }
+
+    // Função para lidar com os dados recebidos
+    function processData(data) {
+      console.log('Dados recebidos:', data);
+      // Aqui você pode fazer o que quiser com os dados recebidos
+
+      // Exemplo: Exibir a imagem e os dados do primeiro jogador na lista
+      const jogadores = data.jogadores;
+      if (jogadores.length > 0) {
+        const imagemJogador = document.getElementById('imagemJogador');
+        const nomeJogador = document.getElementById('nomeJogador');
+        const idadeJogador = document.getElementById('idadeJogador');
+
+        imagemJogador.src = jogadores[3].image;
+        nomeJogador.textContent = jogadores[3].nome;
+        idadeJogador.textContent = jogadores[3].idade;
+      } else {
+        console.error('Nenhum jogador encontrado.');
+      }
+    }
+
+    // Realiza a requisição GET
+    fetch(url)
+      .then(handleResponse)
+      .then(processData)
+      .catch(error => console.error('Erro ao fazer a requisição:', error));
+  </script>
+</html>
